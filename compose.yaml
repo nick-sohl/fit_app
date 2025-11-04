@@ -2,9 +2,9 @@ version: "3.9"
 
 services:
   fit-app:
-    build: .
+    build: . # path to dockerfile
     ports:
-      - "8080:80" # Access app at http://localhost:8080
+      - "3000:80" # Access app at http://localhost:3000
     volumes:
-      - ./public:/var/www/html
-      - ./php:/var/www/html/php
+      - ./public:/var/www/html/fit-app
+      - ./php:/var/www/html/fit-app/php
