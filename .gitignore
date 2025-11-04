@@ -47,3 +47,11 @@ temp/
 *.tmp
 *.swp
 *.swo
+
+# Lazygit
+lazygit
+lazygit.tar.gz
+
+# PHP
+.php-cs-fixer.cache
+
