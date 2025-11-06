@@ -12,6 +12,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "astro": "^5.15.3"
+    "@tailwindcss/vite": "^4.1.16",
+    "astro": "^5.15.3",
+    "tailwindcss": "^4.1.16"
+  },
   }
 }
