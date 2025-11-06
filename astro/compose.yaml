@@ -3,12 +3,6 @@ services:
     build: .
     ports:
       - "4321:4321"
-    develop:
-      watch:
-        - action: sync
-          path: ./src
-          target: /app
-          ignore:
-            - node_modules/
-        - action: rebuild
-          path: package.json
+    volumes:
+      - ./:/app:rw # bind mount: lokales Repo -> /app im Container
+      - /app/node_modules
