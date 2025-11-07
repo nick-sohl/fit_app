@@ -13,6 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "@tailwindcss/vite": "^4.1.16",
+    "@tailwindplus/elements": "^1.0.18",
     "astro": "^5.15.3",
     "tailwindcss": "^4.1.16"
   },
