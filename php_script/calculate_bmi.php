@@ -1,7 +1,7 @@
 <?php
 
-$height = $_POST["height"];
-$weight = $_POST["weight"];
+$height = $_POST["bodyHeight"];
+$weight = $_POST["bodyWeight"];
 $bmi = $weight / ($height / 100) ** 2;
 echo "<section>";
 echo "<p>Dein BMI beträgt: $bmi</p>";

@@ -6,3 +6,25 @@ services:
     volumes:
       - ./:/app:rw # bind mount: lokales Repo -> /app im Container
       - /app/node_modules
+
+  nginx:
+    image: "nginx:stable-alpine-slim"
+    ports:
+      - "8080:80"
+    depends_on:
+      - phpfpm
+    networks:
+      - fitnet
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+
+  phpfpm:
+    image: bitnami/php-fpm:latest
+    networks:
+      - fitnet
+    volumes:
+      - ./php_script/calculate_bmi.php:/var/www/html/calculate_bmi.php:ro
+
+networks:
+  fitnet:
+    driver: bridge
