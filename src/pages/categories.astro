@@ -3,5 +3,191 @@ import SiteBaseLayout from "../layouts/SiteBaseLayout.astro";
 ---
 
 <SiteBaseLayout title="Categories">
-  <!-- Content -->
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 my-16">
+    <div class="sm:flex sm:items-center">
+      <div class="sm:flex-auto">
+        <h1 class="text-lg font-semibold text-white">BMI-Kategorien</h1>
+        <p class="mt-2 text-sm text-gray-300">
+          Übersicht über die verschiedenen BMI-Kategorien gemäss WHO-Definition.
+        </p>
+      </div>
+    </div>
+
+    <div class="mt-8 flow-root">
+      <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+        <div class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
+          <div
+            class="overflow-hidden outline-1 -outline-offset-1 outline-white/10 sm:rounded-lg"
+          >
+            <table class="relative min-w-full divide-y divide-white/15">
+              <thead class="bg-gray-800/75">
+                <tr>
+                  <th
+                    scope="col"
+                    class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-200 sm:pl-6"
+                  >
+                    Kategorie
+                  </th>
+                  <th
+                    scope="col"
+                    class="px-3 py-3.5 text-left text-sm font-semibold text-gray-200"
+                  >
+                    Spezifisch
+                  </th>
+                  <th
+                    scope="col"
+                    class="px-3 py-3.5 text-left text-sm font-semibold text-gray-200"
+                  >
+                    Minimal
+                  </th>
+                  <th
+                    scope="col"
+                    class="px-3 py-3.5 text-left text-sm font-semibold text-gray-200"
+                  >
+                    Maximal
+                  </th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y divide-white/10 bg-gray-800/50">
+                <tr>
+                  <td
+                    class="py-4 pl-4 pr-3 text-sm font-medium text-white whitespace-nowrap sm:pl-6"
+                    >Untergewichtig</td
+                  >
+                  <td class="px-3 py-4 text-sm text-gray-400 whitespace-nowrap"
+                    >Sehr stark</td
+                  >
+                  <td class="px-3 py-4 text-sm text-gray-400 whitespace-nowrap"
+                    >—</td
+                  >
+                  <td class="px-3 py-4 text-sm text-gray-400 whitespace-nowrap"
+                    >&lt; 15.0</td
+                  >
+                </tr>
+                <tr>
+                  <td
+                    class="py-4 pl-4 pr-3 text-sm font-medium text-white whitespace-nowrap sm:pl-6"
+                  ></td>
+                  <td class="px-3 py-4 text-sm text-gray-400 whitespace-nowrap"
+                    >Stark</td
+                  >
+                  <td class="px-3 py-4 text-sm text-gray-400 whitespace-nowrap"
+                    >15.0</td
+                  >
+                  <td class="px-3 py-4 text-sm text-gray-400 whitespace-nowrap"
+                    >&lt; 16.0</td
+                  >
+                </tr>
+                <tr>
+                  <td
+                    class="py-4 pl-4 pr-3 text-sm font-medium text-white whitespace-nowrap sm:pl-6"
+                  ></td>
+                  <td class="px-3 py-4 text-sm text-gray-400 whitespace-nowrap"
+                    >Mässig</td
+                  >
+                  <td class="px-3 py-4 text-sm text-gray-400 whitespace-nowrap"
+                    >16.0</td
+                  >
+                  <td class="px-3 py-4 text-sm text-gray-400 whitespace-nowrap"
+                    >&lt; 17.0</td
+                  >
+                </tr>
+                <tr>
+                  <td
+                    class="py-4 pl-4 pr-3 text-sm font-medium text-white whitespace-nowrap sm:pl-6"
+                  ></td>
+                  <td class="px-3 py-4 text-sm text-gray-400 whitespace-nowrap"
+                    >Leicht</td
+                  >
+                  <td class="px-3 py-4 text-sm text-gray-400 whitespace-nowrap"
+                    >17.0</td
+                  >
+                  <td class="px-3 py-4 text-sm text-gray-400 whitespace-nowrap"
+                    >&lt; 18.5</td
+                  >
+                </tr>
+
+                <tr>
+                  <td
+                    class="py-4 pl-4 pr-3 text-sm font-medium text-white whitespace-nowrap sm:pl-6"
+                    >Normalgewichtig</td
+                  >
+                  <td class="px-3 py-4 text-sm text-gray-400 whitespace-nowrap"
+                    >—</td
+                  >
+                  <td class="px-3 py-4 text-sm text-gray-400 whitespace-nowrap"
+                    >18.5</td
+                  >
+                  <td class="px-3 py-4 text-sm text-gray-400 whitespace-nowrap"
+                    >&lt; 25.0</td
+                  >
+                </tr>
+
+                <tr>
+                  <td
+                    class="py-4 pl-4 pr-3 text-sm font-medium text-white whitespace-nowrap sm:pl-6"
+                    >Übergewichtig</td
+                  >
+                  <td class="px-3 py-4 text-sm text-gray-400 whitespace-nowrap"
+                    >—</td
+                  >
+                  <td class="px-3 py-4 text-sm text-gray-400 whitespace-nowrap"
+                    >25.0</td
+                  >
+                  <td class="px-3 py-4 text-sm text-gray-400 whitespace-nowrap"
+                    >&lt; 30.0</td
+                  >
+                </tr>
+
+                <tr>
+                  <td
+                    class="py-4 pl-4 pr-3 text-sm font-medium text-white whitespace-nowrap sm:pl-6"
+                    >Fettleibig</td
+                  >
+                  <td class="px-3 py-4 text-sm text-gray-400 whitespace-nowrap"
+                    >Mässig (Grad I)</td
+                  >
+                  <td class="px-3 py-4 text-sm text-gray-400 whitespace-nowrap"
+                    >30.0</td
+                  >
+                  <td class="px-3 py-4 text-sm text-gray-400 whitespace-nowrap"
+                    >&lt; 35.0</td
+                  >
+                </tr>
+                <tr>
+                  <td
+                    class="py-4 pl-4 pr-3 text-sm font-medium text-white whitespace-nowrap sm:pl-6"
+                  ></td>
+                  <td class="px-3 py-4 text-sm text-gray-400 whitespace-nowrap"
+                    >Stark (Grad II)</td
+                  >
+                  <td class="px-3 py-4 text-sm text-gray-400 whitespace-nowrap"
+                    >35.0</td
+                  >
+                  <td class="px-3 py-4 text-sm text-gray-400 whitespace-nowrap"
+                    >&lt; 40.0</td
+                  >
+                </tr>
+                <tr>
+                  <td
+                    class="py-4 pl-4 pr-3 text-sm font-medium text-white whitespace-nowrap sm:pl-6"
+                  ></td>
+                  <td class="px-3 py-4 text-sm text-gray-400 whitespace-nowrap"
+                    >Sehr stark (Grad III)</td
+                  >
+                  <td class="px-3 py-4 text-sm text-gray-400 whitespace-nowrap"
+                    >40.0</td
+                  >
+                  <td class="px-3 py-4 text-sm text-gray-400 whitespace-nowrap"
+                    >—</td
+                  >
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </SiteBaseLayout>
