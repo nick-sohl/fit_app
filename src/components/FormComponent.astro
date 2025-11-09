@@ -4,7 +4,11 @@ import ButtonComponent from "./ButtonComponent.astro";
 ---
 
 <div class="my-16">
-  <!-- We've used 3xl here, but feel free to try other max-widths based on your needs -->
+  <div
+    id="result"
+    class="mx-auto max-w-xl text-yellow-500 text-3xl font-bold my-6"
+  >
+  </div>
   <div class="mx-auto max-w-xl">
     <form
       method="post"
@@ -19,7 +23,6 @@ import ButtonComponent from "./ButtonComponent.astro";
         inputType="text"
         inputName="bodyHeight"
         inputPlaceholder="180 cm"
-        errorMessage="Error"
       />
       <InputComponent
         labelFor="bodyWeight"
@@ -28,21 +31,42 @@ import ButtonComponent from "./ButtonComponent.astro";
         inputType="text"
         inputName="bodyWeight"
         inputPlaceholder="80 kg"
-        errorMessage="Error"
       />
       <div class="flex gap-4">
         <ButtonComponent
           primary="true"
-          buttonText="Calculate Serverside"
+          buttonText="Calculate Server Side"
           buttonType="submit"
         />
         <ButtonComponent
-          type="button"
+          id="clientBtn"
+          buttonType="button"
           primary="true"
-          buttonText="Calculate Clientside"
+          buttonText="Calculate Client Side"
         />
         <ButtonComponent buttonText="Reset" buttonType="reset" />
       </div>
     </form>
   </div>
 </div>
+
+<!-- Client Side JavaScript -->
+<script>
+  const btn = document.querySelector("#clientBtn") as HTMLButtonElement;
+  const weightInput = document.querySelector("#bodyWeight") as HTMLInputElement;
+  const heightInput = document.querySelector("#bodyHeight") as HTMLInputElement;
+  const result = document.getElementById("result") as HTMLDivElement | null;
+
+  btn.addEventListener("click", () => {
+    const weight = parseFloat(weightInput.value);
+    const height = parseFloat(heightInput.value);
+
+    if (isNaN(weight) || isNaN(height) || height <= 0) {
+      result!.textContent = "⚠️ Please enter valid numbers.";
+      return;
+    }
+
+    const bmi = weight / (height / 100) ** 2;
+    result!.textContent = `Your BMI is ${bmi.toFixed(1)}`;
+  });
+</script>

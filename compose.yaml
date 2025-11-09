@@ -1,8 +1,8 @@
 services:
   astro:
-    build: .
+    build: . # use Dockerfile to build the image
     ports:
-      - "4321:4321"
+      - "4321:4321" # default Astro ports
     volumes:
       - ./:/app:rw # bind mount: lokales Repo -> /app im Container
       - /app/node_modules
@@ -10,13 +10,13 @@ services:
   nginx:
     image: "nginx:stable-alpine-slim"
     ports:
-      - "8080:80"
+      - "8080:80" # host : container
     depends_on:
       - phpfpm
     networks:
       - fitnet
     volumes:
-      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro # map file on host to file in docker container -> changes will be reflected in the container
 
   phpfpm:
     image: bitnami/php-fpm:latest
