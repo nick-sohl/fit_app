@@ -5,7 +5,7 @@ services:
       - "4321:4321" # default Astro ports
     volumes:
       - ./:/app:rw # bind mount: lokales Repo -> /app im Container
-      - /app/node_modules
+      - node_modules:/app/node_modules
 
   nginx:
     image: "nginx:stable-alpine-slim"
