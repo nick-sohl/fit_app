@@ -1,0 +1,48 @@
+---
+import InputComponent from "./InputComponent.astro";
+import ButtonComponent from "./ButtonComponent.astro";
+---
+
+<div class="my-16">
+  <!-- We've used 3xl here, but feel free to try other max-widths based on your needs -->
+  <div class="mx-auto max-w-xl">
+    <form
+      method="post"
+      action="http://localhost:8080/calculate_bmi.php"
+      target="_blank"
+      class="space-y-6"
+    >
+      <InputComponent
+        labelFor="bodyHeight"
+        label="Body Height"
+        inputId="bodyHeight"
+        inputType="text"
+        inputName="bodyHeight"
+        inputPlaceholder="180 cm"
+        errorMessage="Error"
+      />
+      <InputComponent
+        labelFor="bodyWeight"
+        label="Body Weight"
+        inputId="bodyWeight"
+        inputType="text"
+        inputName="bodyWeight"
+        inputPlaceholder="80 kg"
+        errorMessage="Error"
+      />
+      <div class="flex gap-4">
+        <ButtonComponent
+          primary="true"
+          buttonText="Calculate Serverside"
+          buttonType="submit"
+        />
+        <ButtonComponent
+          type="button"
+          primary="true"
+          buttonText="Calculate Clientside"
+        />
+        <ButtonComponent buttonText="Reset" buttonType="reset" />
+      </div>
+    </form>
+  </div>
+</div>
